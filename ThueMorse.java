@@ -18,16 +18,19 @@ public class ThueMorse {
             thue += m;
             morse += t;
         }
+        /*
         // from string to char array
         char[] tm = new char[thue.length()];
         for (int i = 0; i < thue.length(); i++) {
             tm[i] = thue.charAt(i);
         }
+         */
+        //no need to convert to array, instead change how get elmts.
 
         // create matrix pattern
         for (int i = 0; i < n; i++) { // height
             for (int j = 0; j < n; j++) { // width
-                if (tm[i] == tm[j]) {
+                if (thue.charAt(i) == thue.charAt(j)) {  // (tm[i] == tm[j])
                     System.out.print("+" + "  ");
                 }
                 else {
