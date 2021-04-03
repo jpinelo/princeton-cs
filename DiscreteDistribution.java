@@ -12,10 +12,6 @@ public class DiscreteDistribution {
             n[i] = Integer.parseInt(args[i + 1]);
         }
 
-        //        int m = Integer.parseInt(args[0]);
-        //        int n = args.length;
-        //        int[] cumSum = new int[n];
-
         // cumsums along array
         int[] s = new int[n.length];
         int sum = 0;
@@ -23,12 +19,6 @@ public class DiscreteDistribution {
             sum += n[i];
             s[i] = sum;
         }
-
-        // read arguments from args_1 to args_n-1 and update cumulativeSum
-        //        for (int i = 1; i < n; i++) {
-        //            // update cumulativeSum
-        //            cumSum[i] = cumSum[i - 1] + Integer.parseInt(args[i]);
-        //        }
 
         for (int i = 0; i < m; i++) {
             // pick a random integer r uniformly between 0 and S_n
@@ -51,7 +41,7 @@ public class DiscreteDistribution {
                     }
                 }
             }
-            // output
+
             System.out.print(k + " ");
         }
     }
