@@ -21,28 +21,27 @@ public class DiscreteDistribution {
         }
 
         for (int i = 0; i < m; i++) {
-            // pick a random integer r uniformly between 0 and S_n
-            int r = (int) (Math.random() * s[n.length - 1]);
-            // initialize index k to be the middle index between 0 to n.
+            // pick a random integer r uniformly between min and max
             int max = n.length - 1;
             int min = 0;
-            int k = (n.length - 1) / 2;
+            int r = (int) (Math.random() * s[max]);
 
-            while (k != 0 && (r < s[k - 1] || r >= s[k])) {
-                if (s[k - 1] > r) {
-                    max = k;
-                    k = (max + min) / 2;
+            // initialize j in the middle between 0 and n.
+            int j = (n.length - 1) / 2;
+            while (j != 0 && (r < s[j - 1] || r >= s[j])) {
+                if (s[j - 1] > r) {
+                    max = j;
+                    j = (max + min) / 2;
                 }
                 else {
-                    min = k;
-                    k = (max + min) / 2;
-                    if (min == k) {
-                        k++;
+                    min = j;
+                    j = (max + min) / 2;
+                    if (min == j) {
+                        j++;
                     }
                 }
             }
-
-            System.out.print(k + " ");
+            System.out.print(j + " ");
         }
     }
 
