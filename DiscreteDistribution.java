@@ -24,7 +24,7 @@ public class DiscreteDistribution {
             // pick a random integer r uniformly between min and max
             int max = n.length - 1;
             int min = 0;
-            int r = (int) (Math.random() * s[max]);
+            int r = (int) (Math.random() * s[max] + min);
 
             // initialize j in the middle between 0 and n.
             int j = (n.length - 1) / 2;
